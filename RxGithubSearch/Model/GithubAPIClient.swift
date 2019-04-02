@@ -17,7 +17,6 @@ protocol APIClient {
 class GithubAPIClient: APIClient {
     var url = "https://api.github.com/search/repositories"
     
-    // Wikipedia APIに向けてHTTPリクエストを実行
     func getRequest(_ parameters: [String : String]) -> DataRequest{
         return Alamofire.request(URL(string:"https://api.github.com/search/repositories")!,
                                  method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil)
