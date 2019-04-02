@@ -37,8 +37,8 @@ class GithubSearchAPIModel {
             print("responseItems",responseItems)
             responseItems.forEach{
                 guard let title = $0["full_name"] as? String,
-                    let name = $0["git_url"] as? String else { return }
-                results.append(Response(title: title, name: name))
+                    let url = $0["html_url"] as? String else { return }
+                results.append(Response(title: title, url:url))
             }
         }
         return results

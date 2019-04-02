@@ -12,5 +12,5 @@ import Foundation
 
 struct Response {
     let title : String
-    let name : String
+    let url : String
 }

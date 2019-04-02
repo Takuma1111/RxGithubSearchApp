@@ -9,6 +9,8 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SafariServices
+
 
 class SearchController: UIViewController{
 
@@ -21,19 +23,40 @@ class SearchController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //tableにcellを登録
+        table.register(UINib(nibName: "CellView", bundle: nil), forCellReuseIdentifier: "CellView")
+        
+        
+        //検索ワードをviewModelに渡す
         self.searchBar.rx.text.orEmpty
             .bind(to: self.viewModel.searchWord)
             .disposed(by: self.disposeBag)
         
         // 検索結果とテーブルのセルをbind
         self.viewModel.items.asObservable()
-            .bind(to: self.table.rx.items(cellIdentifier: "Cell")) { index, result, cell in
-                cell.textLabel?.text = result.title
-                cell.detailTextLabel?.text = result.name
+            .bind(to: self.table.rx.items) { tableView, row, element in
+
+
+                let cell = self.table.dequeueReusableCell(withIdentifier: "CellView")! as! CellView
+                
+                cell.titleLabel?.text = element.title
+                cell.urlLabel?.text = element.url
+
+                return cell
             }
             .disposed(by: self.disposeBag)
-
-
+        
+        //Webページを表示
+        self.table.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                let cell = self?.table.cellForRow(at: indexPath)
+                if let url = cell?.detailTextLabel?.text, let urlSourse = URL(string: url) {
+                    let safariViewController = SFSafariViewController(url: urlSourse)
+                    self?.present(safariViewController, animated: true)
+                }
+            }).disposed(by: disposeBag)
+        
+        
     }
 
     

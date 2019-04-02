@@ -19,6 +19,8 @@
 		2D8234BE224A1E3E00553958 /* RxGithubSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8234BD224A1E3E00553958 /* RxGithubSearchTests.swift */; };
 		2D8234C9224A1E3E00553958 /* RxGithubSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8234C8224A1E3E00553958 /* RxGithubSearchUITests.swift */; };
 		2D8234DD224A200400553958 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8234DC224A200400553958 /* SearchController.swift */; };
+		2DCA1CEA22536B2E00689DD8 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCA1CE822536B2E00689DD8 /* CellView.swift */; };
+		2DCA1CEB22536B2E00689DD8 /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DCA1CE922536B2E00689DD8 /* CellView.xib */; };
 		E98A68B6B63A5DB1E66C3A41 /* Pods_RxGithubSearchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA8FF3F2A87A6902A3ACA7D2 /* Pods_RxGithubSearchUITests.framework */; };
 		F0B7B53C8890429420FB3F91 /* Pods_RxGithubSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95179C13CA1FC4D4B924FD45 /* Pods_RxGithubSearch.framework */; };
 /* End PBXBuildFile section */
@@ -58,6 +60,8 @@
 		2D8234C8224A1E3E00553958 /* RxGithubSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxGithubSearchUITests.swift; sourceTree = "<group>"; };
 		2D8234CA224A1E3E00553958 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D8234DC224A200400553958 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		2DCA1CE822536B2E00689DD8 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		2DCA1CE922536B2E00689DD8 /* CellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
 		443AC95C784D20BBC93DAEED /* Pods-RxGithubSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxGithubSearch.debug.xcconfig"; path = "Target Support Files/Pods-RxGithubSearch/Pods-RxGithubSearch.debug.xcconfig"; sourceTree = "<group>"; };
 		44EB9083E53CA8F74FAC6739 /* Pods-RxGithubSearchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxGithubSearchTests.release.xcconfig"; path = "Target Support Files/Pods-RxGithubSearchTests/Pods-RxGithubSearchTests.release.xcconfig"; sourceTree = "<group>"; };
 		620944C08BC6BC267FACD56B /* Pods-RxGithubSearchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxGithubSearchUITests.debug.xcconfig"; path = "Target Support Files/Pods-RxGithubSearchUITests/Pods-RxGithubSearchUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 		2D8234A7224A1E2C00553958 /* RxGithubSearch */ = {
 			isa = PBXGroup;
 			children = (
+				2DCA1CE722536AEF00689DD8 /* View */,
 				2D7D7975224CDABB00ECC944 /* ViewModel */,
 				2D7D7972224CDA7B00ECC944 /* Model */,
 				2D8234DB224A1FEA00553958 /* Controller */,
@@ -186,6 +191,15 @@
 				2D8234DC224A200400553958 /* SearchController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		2DCA1CE722536AEF00689DD8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2DCA1CE822536B2E00689DD8 /* CellView.swift */,
+				2DCA1CE922536B2E00689DD8 /* CellView.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		6D61B1A5CAD54BC5C6D44C6F /* Pods */ = {
@@ -312,6 +326,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DCA1CEB22536B2E00689DD8 /* CellView.xib in Resources */,
 				2D8234B3224A1E3C00553958 /* LaunchScreen.storyboard in Resources */,
 				2D8234B0224A1E3C00553958 /* Assets.xcassets in Resources */,
 				2D8234AE224A1E2C00553958 /* Main.storyboard in Resources */,
@@ -442,6 +457,7 @@
 				2D7D797D224CE0CF00ECC944 /* GithubSearchAPIViewModel.swift in Sources */,
 				2D7D7974224CDA8A00ECC944 /* Response.swift in Sources */,
 				2D8234DD224A200400553958 /* SearchController.swift in Sources */,
+				2DCA1CEA22536B2E00689DD8 /* CellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,7 +642,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.RxGithubSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -645,7 +661,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.RxGithubSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
