@@ -30,7 +30,7 @@ class GithubSearchAPIModel {
     
      func parseJson(_ json:Any) -> [Response] {
         guard let items = json as? [String: Any] else {
-           print("jsonがなかった")
+            print("jsonがなかった")
             return []
         }
         var results = [Response]()
