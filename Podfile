@@ -10,7 +10,8 @@ target 'RxGithubSearch' do
 
   pod 'RxSwift'
   pod 'RxCocoa'
-  pod 'Alamofire'	
+  pod 'Alamofire'
+  pod 'FontAwesome.swift'
 
   target 'RxGithubSearchTests' do
     inherit! :search_paths

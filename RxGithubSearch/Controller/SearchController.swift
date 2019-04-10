@@ -10,10 +10,11 @@ import UIKit
 import RxSwift
 import RxCocoa
 import SafariServices
-
+import FontAwesome_swift
 
 class SearchController: UIViewController{
 
+    @IBOutlet weak var navigationBar: UINavigationItem!     //navigatinBar
     @IBOutlet var table: UITableView!
     @IBOutlet var searchBar: UISearchBar!
     private let disposeBag = DisposeBag()
@@ -56,7 +57,13 @@ class SearchController: UIViewController{
                 }
             }).disposed(by: disposeBag)
         
-        
+        //ナビゲーションバーのテキストを変更FontAwesomeを使用して
+        navigationBar.title =  "Git \(String.fontAwesomeIcon(name: .github)) hub"
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont.fontAwesome(ofSize: 30, style: .brands)]
+        //ナビゲーションバーの色を変更
+        self.navigationController?.navigationBar.barTintColor = .gray
+        self.navigationController?.navigationBar.tintColor = .white
+
     }
 
     

@@ -24,6 +24,7 @@ class GithubSearchAPIViewModel{
             .filter{ $0.count >= 2 }
             .debounce(0.5, scheduler: MainScheduler.instance)
             .flatMapLatest { [unowned self] str in
+                //パラメーターを渡す
                 return self.model.searchGithub(["q":str])
         }
             .bind(to: self.items)

@@ -15,6 +15,7 @@ class GithubSearchAPIModel {
    
     func searchGithub(_ parameters:[String:String]) -> Observable<[Response]>{
         return Observable<[Response]>.create{ (observer) -> Disposable in
+            
             let request = self.client.getRequest(parameters).responseJSON{ response in
                 if let error = response.error {
                     observer.onError(error)
