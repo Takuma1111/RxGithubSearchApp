@@ -7,4 +7,7 @@ RxSwiftを用いてGithubのリポジトリ検索アプリを作りました。
  ・RxCocoa
  ・FontAwesome_swift
  
- 
+
+<image></image>
+
+
