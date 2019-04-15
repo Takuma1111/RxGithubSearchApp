@@ -9,4 +9,4 @@ RxSwiftを用いてGithubのリポジトリ検索アプリを作りました。
  
  実行過程
  ターミナルにてこのプロジェクトファイルに移動して<code>$ bundle i</code>をします。
- そしてRxGithubSearch.xcworkspaceのファイルに移動します。
+ そしてRxGithubSearch.xcworkspaceのファイルを開きます。
