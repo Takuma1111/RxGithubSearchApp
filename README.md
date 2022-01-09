@@ -8,7 +8,7 @@ RxSwiftを用いてGithubのリポジトリ検索アプリを作りました。
  ・FontAwesome_swift
  
  実行過程
- ターミナルにてこのプロジェクトファイルに移動して<code>$ bundle i</code>をします。
+ ターミナルにてこのプロジェクトファイルに移動して<code>$ pod install</code>をします。
  そしてRxGithubSearch.xcworkspaceのファイルを開きます。
  
 # Demo
